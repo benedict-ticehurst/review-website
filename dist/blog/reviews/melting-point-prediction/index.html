@@ -1,0 +1,420 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-tldeq5d5><head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="icon" href="/favicon.ico"><link rel="sitemap" href="/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" title="Chemical Reviews" href="https://example.com/rss.xml"><meta name="generator" content="Astro v7.3.2"><style>@font-face{font-family:Atkinson-c7f4c4e8b285552f;src:url("/_astro/fonts/89758defcfa85239.woff") format("woff");font-display:swap;font-weight:400;font-style:normal;}@font-face{font-family:Atkinson-c7f4c4e8b285552f;src:url("/_astro/fonts/14aa8dd5744dd4bc.woff") format("woff");font-display:swap;font-weight:700;font-style:normal;}@font-face{font-family:"Atkinson-c7f4c4e8b285552f fallback: Arial";src:local("Arial");font-display:swap;font-weight:400;font-style:normal;size-adjust:99.3717%;ascent-override:80.1033%;descent-override:25.2587%;line-gap-override:0%;}@font-face{font-family:"Atkinson-c7f4c4e8b285552f fallback: Arial Bold";src:local("Arial Bold");font-display:swap;font-weight:700;font-style:normal;size-adjust:92.2954%;ascent-override:86.2448%;descent-override:27.1953%;line-gap-override:0%;}:root{--font-atkinson:Atkinson-c7f4c4e8b285552f,"Atkinson-c7f4c4e8b285552f fallback: Arial","Atkinson-c7f4c4e8b285552f fallback: Arial Bold",sans-serif;}</style><link rel="preload" href="/_astro/fonts/89758defcfa85239.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="/_astro/fonts/14aa8dd5744dd4bc.woff" as="font" type="font/woff" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://example.com/blog/reviews/melting-point-prediction/"><!-- Primary Meta Tags --><title>Building and Comparing Models for Melting Point Prediction of Organic Compounds</title><meta name="description" content="A comparative evaluation of four modelling strategies, PCA-based and full-descriptor linear regression, LASSO regression, and descriptor- and Morgan-fingerprint-based neural networks, for predicting the melting points of organic compounds from molecular structure."><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://example.com/blog/reviews/melting-point-prediction/"><meta property="og:title" content="Building and Comparing Models for Melting Point Prediction of Organic Compounds"><meta property="og:description" content="A comparative evaluation of four modelling strategies, PCA-based and full-descriptor linear regression, LASSO regression, and descriptor- and Morgan-fingerprint-based neural networks, for predicting the melting points of organic compounds from molecular structure."><meta property="og:image" content="https://example.com/_astro/blog-placeholder-4.gLBdjEDe.jpg"><!-- Twitter --><meta name="twitter:card" content="summary_large_image"><style>:root{--accent:#2337ff;--accent-dark:#000d8a;--black:15, 18, 25;--gray:96, 115, 159;--gray-light:229, 233, 240;--gray-dark:34, 41, 57;--gray-gradient:rgba(var(--gray-light), 50%), #fff;--box-shadow:0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%), 0 16px 32px rgba(var(--gray), 33%)}body{font-family:var(--font-atkinson);text-align:left;background:linear-gradient(var(--gray-gradient)) no-repeat;word-wrap:break-word;overflow-wrap:break-word;color:rgb(var(--gray-dark));background-size:100% 600px;margin:0;padding:0;font-size:20px;line-height:1.7}main{width:720px;max-width:calc(100% - 2em);margin:auto;padding:3em 1em}h1,h2,h3,h4,h5,h6{color:rgb(var(--black));margin:0 0 .5rem;line-height:1.2}h1{font-size:3.052em}h2{font-size:2.441em}h3{font-size:1.953em}h4{font-size:1.563em}h5{font-size:1.25em}strong,b{font-weight:700}a,a:hover{color:var(--accent)}p{margin-bottom:1em}.prose p{margin-bottom:2em}textarea{width:100%;font-size:16px}input{font-size:16px}table{width:100%}img{border-radius:8px;max-width:100%;height:auto}code{background-color:rgb(var(--gray-light));border-radius:2px;padding:2px 5px}pre{border-radius:8px;padding:1.5em}pre>code{all:unset}blockquote{border-left:4px solid var(--accent);margin:0;padding:0 0 0 20px;font-size:1.333em}hr{border:none;border-top:1px solid rgb(var(--gray-light))}@media (width<=720px){body{font-size:18px}main{padding:1em}}.sr-only{clip:rect(1px 1px 1px 1px);clip:rect(1px, 1px, 1px, 1px);clip-path:inset(50%);white-space:nowrap;border:0;width:1px;height:1px;margin:0;padding:0;overflow:hidden;position:absolute!important}footer[data-astro-cid-jo6i4kqk]{background:linear-gradient(var(--gray-gradient)) no-repeat;color:rgb(var(--gray));text-align:center;padding:2em 1em 6em}.social-links[data-astro-cid-jo6i4kqk]{justify-content:center;gap:1em;margin-top:1em;display:flex}.social-links[data-astro-cid-jo6i4kqk] a[data-astro-cid-jo6i4kqk]{color:rgb(var(--gray));text-decoration:none}.social-links[data-astro-cid-jo6i4kqk] a[data-astro-cid-jo6i4kqk]:hover{color:rgb(var(--gray-dark))}a[data-astro-cid-evkijfd6]{text-decoration:none;display:inline-block}a[data-astro-cid-evkijfd6].active{font-weight:bolder;text-decoration:underline}header[data-astro-cid-nen7h5rs]{box-shadow:0 2px 8px rgba(var(--black), 5%);background:#fff;margin:0;padding:0 1em}h2[data-astro-cid-nen7h5rs]{margin:0;font-size:1em}h2[data-astro-cid-nen7h5rs] a[data-astro-cid-nen7h5rs],h2[data-astro-cid-nen7h5rs] a[data-astro-cid-nen7h5rs].active{text-decoration:none}nav[data-astro-cid-nen7h5rs]{justify-content:space-between;align-items:center;display:flex}nav[data-astro-cid-nen7h5rs] a[data-astro-cid-nen7h5rs]{color:var(--black);border-bottom:4px solid #0000;padding:1em .5em;text-decoration:none}nav[data-astro-cid-nen7h5rs] a[data-astro-cid-nen7h5rs].active{border-bottom-color:var(--accent);text-decoration:none}.social-links[data-astro-cid-nen7h5rs],.social-links[data-astro-cid-nen7h5rs] a[data-astro-cid-nen7h5rs]{display:flex}@media (width<=720px){.social-links[data-astro-cid-nen7h5rs]{display:none}}
+main[data-astro-cid-tldeq5d5]{width:calc(100% - 2em);max-width:100%;margin:0}.hero-image[data-astro-cid-tldeq5d5]{width:100%}.hero-image[data-astro-cid-tldeq5d5] img[data-astro-cid-tldeq5d5]{box-shadow:var(--box-shadow);border-radius:12px;margin:0 auto;display:block}.prose[data-astro-cid-tldeq5d5]{width:720px;max-width:calc(100% - 2em);color:rgb(var(--gray-dark));margin:auto;padding:1em}.title[data-astro-cid-tldeq5d5]{text-align:center;margin-bottom:1em;padding:1em 0;line-height:1}.title[data-astro-cid-tldeq5d5] h1[data-astro-cid-tldeq5d5]{margin:0 0 .5em}.date[data-astro-cid-tldeq5d5]{color:rgb(var(--gray));margin-bottom:.5em}.last-updated-on[data-astro-cid-tldeq5d5]{font-style:italic}
+</style></head><body data-astro-cid-tldeq5d5><header data-astro-cid-nen7h5rs><nav data-astro-cid-nen7h5rs><h2 data-astro-cid-nen7h5rs><a href="/" data-astro-cid-nen7h5rs>Chemical Reviews</a></h2><div class="internal-links" data-astro-cid-nen7h5rs><a href="/" data-astro-cid-nen7h5rs="true" data-astro-cid-evkijfd6>Home</a><a href="/blog" class="active" data-astro-cid-nen7h5rs="true" data-astro-cid-evkijfd6>Reviews</a><a href="/about" data-astro-cid-nen7h5rs="true" data-astro-cid-evkijfd6>About</a></div><div class="social-links" data-astro-cid-nen7h5rs><a href="https://m.webtoo.ls/@astro" target="_blank" data-astro-cid-nen7h5rs><span class="sr-only" data-astro-cid-nen7h5rs>Follow Astro on Mastodon</span><svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" data-astro-cid-nen7h5rs><path fill="currentColor" d="M11.19 12.195c2.016-.24 3.77-1.475 3.99-2.603.348-1.778.32-4.339.32-4.339 0-3.47-2.286-4.488-2.286-4.488C12.062.238 10.083.017 8.027 0h-.05C5.92.017 3.942.238 2.79.765c0 0-2.285 1.017-2.285 4.488l-.002.662c-.004.64-.007 1.35.011 2.091.083 3.394.626 6.74 3.78 7.57 1.454.383 2.703.463 3.709.408 1.823-.1 2.847-.647 2.847-.647l-.06-1.317s-1.303.41-2.767.36c-1.45-.05-2.98-.156-3.215-1.928a3.614 3.614 0 0 1-.033-.496s1.424.346 3.228.428c1.103.05 2.137-.064 3.188-.189zm1.613-2.47H11.13v-4.08c0-.859-.364-1.295-1.091-1.295-.804 0-1.207.517-1.207 1.541v2.233H7.168V5.89c0-1.024-.403-1.541-1.207-1.541-.727 0-1.091.436-1.091 1.296v4.079H3.197V5.522c0-.859.22-1.541.66-2.046.456-.505 1.052-.764 1.793-.764.856 0 1.504.328 1.933.983L8 4.39l.417-.695c.429-.655 1.077-.983 1.934-.983.74 0 1.336.259 1.791.764.442.505.661 1.187.661 2.046v4.203z" data-astro-cid-nen7h5rs></path></svg></a><a href="https://twitter.com/astrodotbuild" target="_blank" data-astro-cid-nen7h5rs><span class="sr-only" data-astro-cid-nen7h5rs>Follow Astro on Twitter</span><svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" data-astro-cid-nen7h5rs><path fill="currentColor" d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" data-astro-cid-nen7h5rs></path></svg></a><a href="https://github.com/withastro/astro" target="_blank" data-astro-cid-nen7h5rs><span class="sr-only" data-astro-cid-nen7h5rs>Go to Astro's GitHub repo</span><svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" data-astro-cid-nen7h5rs><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" data-astro-cid-nen7h5rs></path></svg></a></div></nav></header><main data-astro-cid-tldeq5d5><article data-astro-cid-tldeq5d5><div class="hero-image" data-astro-cid-tldeq5d5></div><div class="prose" data-astro-cid-tldeq5d5><div class="title" data-astro-cid-tldeq5d5><div class="date" data-astro-cid-tldeq5d5><time datetime="2026-04-29T00:00:00.000Z">Apr 29, 2026</time></div><h1 data-astro-cid-tldeq5d5>Building and Comparing Models for Melting Point Prediction of Organic Compounds</h1><hr data-astro-cid-tldeq5d5></div><p><strong>Benedict Ticehurst</strong>
+<em>Yr 4, Machine Learning and AI, University of Southampton</em></p>
+<h2 id="contents">Contents</h2>
+<ol>
+<li>Introduction</li>
+<li>The Datasets</li>
+<li>Molecular Descriptors</li>
+<li>Principal Component Analysis</li>
+<li>Morgan Fingerprints and Hierarchical Clustering
+<ol>
+<li>Hierarchical Clustering</li>
+</ol>
+</li>
+<li>Linear Regression</li>
+<li>LASSO Regression</li>
+<li>Neural Networks: Descriptor-Based
+<ol>
+<li>Architecture and Training</li>
+<li>Results</li>
+</ol>
+</li>
+<li>Neural Networks: Morgan Fingerprint-Based
+<ol>
+<li>Architecture and Training</li>
+<li>Results</li>
+<li>Comparison with Descriptor Network and Learning Curves</li>
+</ol>
+</li>
+<li>Discussion
+<ol>
+<li>What Additional Information Would Improve Future Models?</li>
+</ol>
+</li>
+<li>Conclusion</li>
+<li>References</li>
+</ol>
+<h2 id="1-introduction">1. Introduction</h2>
+<p>The melting point of an organic compound reflects the thermodynamic balance between the stability of the crystalline solid and the thermal energy required to disrupt intermolecular forces and produce the disordered liquid phase. It is determined by a complex interplay of molecular size, shape, polarity, rigidity, hydrogen-bonding capacity, aromaticity, and crystal packing symmetry. As a consequence, predicting melting point from molecular structure alone is a challenging but scientifically valuable problem. Within the pharmaceutical industry in particular, melting point is directly linked to aqueous solubility through the Yalkowsky general solubility equation, making it an important parameter for early-stage drug candidate screening [1].</p>
+<p>Explicit quantum-mechanical or molecular-dynamics modelling of the full crystalline lattice, large enough to capture all relevant intermolecular interactions, is computationally intractable for large compound libraries. Statistical and machine-learning approaches therefore offer a practical alternative. In this project, four modelling strategies were evaluated and compared: ordinary least-squares linear regression on molecular descriptors and principal components; LASSO regularised regression; and two neural network architectures using descriptors and Morgan fingerprints, respectively. This makes it possible to compare, fairly directly, whether the model choice or the molecular representation matters more for predicting melting point.</p>
+<h2 id="2-the-datasets">2. The Datasets</h2>
+<p>Four datasets of experimentally measured melting points were provided as CSV files. The OCHEM [2] and Enamine datasets (21,883 and 22,404 molecules, respectively) were used as the combined training source. The Bradley [3] and Bergstrom [4] datasets (2,886 and 277 molecules, respectively) were reserved throughout as independent test sets. The combined training set contains 44,286 molecules after removing entries with missing or non-numeric melting points; the test set contains 3,163 molecules. All melting points are reported in Kelvin.</p>
+<p>The four datasets were originally described in Nigsch <em>et al.</em> [1] and span a broad range of drug-like organic compounds. The Bradley and Bergstrom datasets are curated, high-quality collections and represent a more demanding test than using a random split of the same source data. Training on OCHEM and Enamine, which come from higher-throughput measurements and literature aggregations, and testing on these curated collections gives a tougher test than a random split of the same data would.</p>
+<h2 id="3-molecular-descriptors">3. Molecular Descriptors</h2>
+<p>Twenty-four molecular descriptors were calculated from SMILES strings using the RDKit library [5], including the five from the example notebook (TPSA, NumHAcceptors, NumHDonors, RingCount, MolLogP) and nineteen additional descriptors selected for their expected chemical relevance. These capture the key physicochemical features expected to influence melting point: molecular size (MolWt, AtomNum, LabuteASA), polarity and hydrogen bonding (TPSA, NumHDonors, NumHAcceptors), flexibility (NumRotBond, SP3Hydrid), aromatic character (NumAroRings, NumAroCarboC), ring systems (NumAliRing, NumSatRing, NumSpiro, NumBridge), heteroatom and carbon composition (NumHeteroA, NumAliHeteroC, NumAroHeteroC, NumSatHeteroC, NumSatCarboC, NumAliCarboC), and functional group complexity (NumAmide, NumStereocentres). Scatter plots of all 24 descriptors against experimental melting point are provided in Figure H.</p>
+<h2 id="4-principal-component-analysis">4. Principal Component Analysis</h2>
+<p>Principal component analysis was applied to the standardised descriptor matrix for all 47,450 molecules across all four datasets combined, as required. Standardisation (mean-centring and unit-variance scaling) was performed before fitting to prevent descriptors with large numerical ranges from dominating the variance decomposition. This combined fit is strictly exploratory analysis of the descriptor space; the PCA model and scaler used in the supervised regression section were refitted on the training set only, so no test-set information enters the predictive models.</p>
+<blockquote>
+<p><strong>Figure 1.</strong> Left: scree plot of variance explained by each principal component. Right: cumulative explained variance with reference lines at 90% and 95%. The first 10 PCs account for 92.2% of total variance; 12 PCs account for 95.4%.</p>
+</blockquote>
+<p>The first principal component (PC1) accounts for 26.4% of the total descriptor variance and is dominated by molecular size and ring-system descriptors: NumAliRing (loading 0.326), AtomNum (0.318), NumSatRing (0.308), LabuteASA (0.305), and NumStereocentres (0.286). This component broadly separates small, simple molecules from large, complex ring systems. The second component (PC2, 18.7% of variance) captures aromaticity, with strong positive loadings on NumAroRings (0.392) and NumAroCarboC (0.321), and a negative loading on SP3Hydrid (−0.285), distinguishing flat, aromatic compounds from saturated, three-dimensional ones.</p>
+<p>Together, the first twelve principal components explain 95.4% of the total descriptor variance (Figure 1), and these twelve were used as input to the PC-based linear regression model. This choice balances information retention against the risk of including lower-variance components that may encode noise rather than chemically meaningful structure.</p>
+<blockquote>
+<p><strong>Figure 2.</strong> PC1 vs PC2 scores for all four datasets overlaid. The OCHEM and Enamine training data occupy broad, overlapping regions of PC space. The Bradley and Bergstrom test molecules sit largely within the training data distribution, which supports the plausibility of generalisation, though overlap in two dimensions is not a definitive test of full chemical space coverage.</p>
+</blockquote>
+<p>The overlap of all four datasets in the PC1–PC2 plane (Figure 2) shows no obvious separation between the test and training compounds in this projection, which is encouraging for generalisation. The Enamine dataset sits in a noticeably tighter cluster than OCHEM, which likely reflects its more focused pharmaceutical-like origin.</p>
+<h2 id="5-morgan-fingerprints-and-hierarchical-clustering">5. Morgan Fingerprints and Hierarchical Clustering</h2>
+<p>Morgan circular fingerprints (ECFP) [8] were calculated for all 47,450 molecules using radius=2 and a bit-vector length of 2048 bits, following the approach demonstrated in the workshop notebook. At radius=2, each bit encodes the presence of a particular substructural environment extending up to two bonds from a central atom. The resulting fingerprint matrix (47,450 × 2048) was saved to disk for reuse in the neural network section.</p>
+<p>With an average bit density of 0.014 (1.4% of bits set per molecule), the fingerprints are highly sparse. No bits were found to be universally on or off across the dataset, indicating that all 2048 positions carry at least some discriminating information.</p>
+<h3 id="51-hierarchical-clustering">5.1. Hierarchical Clustering</h3>
+<p>Hierarchical clustering with average linkage was performed on a stratified random sample of 200 molecules (50 per dataset) to make pairwise distance computation tractable. Computing pairwise distances for all 47,450 molecules would require approximately 1.12 billion matrix entries, which is intractable for hierarchical clustering. The stratified 200-molecule sample ensures equal representation from all four datasets and captures the broad structural diversity visible in the full PCA scatter; the general conclusions drawn from this sample are representative. Two representations were compared.</p>
+<p>Fingerprint clustering used (1 − Tanimoto similarity) as the pairwise distance metric. The distance cutoff of 0.70 was chosen by visual inspection of the dendrogram to identify a threshold giving a biologically meaningful separation without collapsing all molecules into a single cluster or placing every molecule in its own cluster. At a distance cutoff of 0.70, the 200 molecules were distributed across 157 distinct clusters, indicating that most molecules are structurally unique at this level of resolution. The high cluster count reflects the sparse, high-dimensional nature of the fingerprint space: small structural differences map to distinct, non-overlapping bit patterns.</p>
+<p>Descriptor clustering used Euclidean distance on the standardised 24-descriptor matrix, with a cutoff of 5.0 chosen by the same visual criterion. At a cutoff of 5.0, the same 200 molecules formed only 24 clusters, with the largest cluster containing over 100 molecules. Descriptors integrate many structural features into continuous values, so structurally diverse compounds can have similar descriptor profiles.</p>
+<p>The comparison (Figure M) shows the two representations are related but not equivalent: pairs that fingerprints place in the same cluster often span a wide range of descriptor distances, and vice versa. Fingerprints pick up fine-grained structural differences that continuous descriptors tend to average out.</p>
+<blockquote>
+<p><strong>Figure 3.</strong> Fingerprint dendrograms at 512, 1024, and 2048 bits (left to right) at Tanimoto distance cutoff = 0.70. The number of resolved clusters increases with bit length: 141 clusters at 512 bits, 148 at 1024 bits, and 157 at 2048 bits. Longer fingerprints encode more structural detail and suffer fewer bit collisions, resolving more distinct molecular environments.</p>
+</blockquote>
+<p><strong>Table 1.</strong> Effect of fingerprint bit length on clustering and mean pairwise Tanimoto similarity for the 200-molecule sample (radius=2, cutoff=0.70).</p>
+<table>
+<thead>
+<tr>
+<th>Bit length</th>
+<th>Clusters</th>
+<th>Mean Tanimoto sim.</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>512</td>
+<td>141</td>
+<td>0.1110</td>
+<td>Highest bit collision rate</td>
+</tr>
+<tr>
+<td>1024</td>
+<td>148</td>
+<td>0.0990</td>
+<td>Intermediate</td>
+</tr>
+<tr>
+<td>2048</td>
+<td>157</td>
+<td>0.0934</td>
+<td>Lowest bit collision rate</td>
+</tr>
+</tbody>
+</table>
+<p>As shown in Figure 3 and Table 1, the number of clusters increases from 141 at 512 bits to 157 at 2048 bits. This is consistent with physical expectations: shorter fingerprints have more bit collisions (different substructures hashing to the same position), which inflates apparent molecular similarity and reduces the number of resolved clusters. The mean pairwise Tanimoto similarity decreases from 0.111 to 0.093 as bit length increases, confirming that collision rate falls and structural discrimination improves. Given this result, 2048 bits was used as the fingerprint length throughout the neural network section.</p>
+<h2 id="6-linear-regression">6. Linear Regression</h2>
+<p>Three ordinary least-squares linear regression models were fitted using the combined OCHEM and Enamine training data and evaluated on the combined Bradley and Bergstrom test set. Descriptor features were standardised before fitting in all cases, with the scaler fitted on the training data only and then applied to the test data.</p>
+<p>Model 1 used the top 12 principal components from the PCA fitted in Section 4, which together explain 95.4% of total descriptor variance. The PC scores for the training and test molecules were computed by applying the saved PCA model and scaler.</p>
+<p>Model 2 used a hand-selected set of 12 descriptors, chosen to match the number of PCs used in Model 1. The selected descriptors were MolWt, MolLogP, TPSA, NumHDonors, NumHAcceptors, NumAroRings, RingCount, NumRotBond, SP3Hydrid, LabuteASA, NumStereocentres, and NumAmide. This set was chosen to represent the main axes of physicochemical variation identified in the PCA (size, aromaticity, polarity, flexibility, and hydrogen bonding).</p>
+<p>Model 3 used all 24 descriptors, providing the maximum information available from this representation.</p>
+<p><strong>Table 2.</strong> Test set performance of the four linear-style models. RMSE and MAE are in Kelvin. Model 4 is the LASSO result from Section 7.</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>R²</th>
+<th>MAE (K)</th>
+<th>RMSE (K)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Model 1: Linear regression, top 12 PCs</td>
+<td>0.485</td>
+<td>54.83</td>
+<td>69.03</td>
+</tr>
+<tr>
+<td>Model 2: Linear regression, 12 descriptors</td>
+<td>0.530</td>
+<td>52.83</td>
+<td>65.94</td>
+</tr>
+<tr>
+<td>Model 3: Linear regression, 24 descriptors</td>
+<td>0.566</td>
+<td>50.24</td>
+<td>63.39</td>
+</tr>
+<tr>
+<td>Model 4: LASSO (α = 0.01, 24 descriptors)</td>
+<td>0.567</td>
+<td>50.19</td>
+<td>63.33</td>
+</tr>
+</tbody>
+</table>
+<p>The results (Table 2) show a clear and consistent improvement from Model 1 to Model 3: using the raw descriptors rather than PCA-compressed scores, and using more descriptors rather than fewer, both improve performance. Model 1 (R² = 0.485, RMSE = 69.0 K) performs worst, suggesting that the PCA transformation loses information that is predictive of melting point even when retaining 95% of descriptor variance. Model 3 (R² = 0.566, RMSE = 63.4 K) outperforms Model 2 (R² = 0.530, RMSE = 65.9 K), indicating that the additional 12 descriptors not included in the curated set contribute useful predictive signal, despite potentially higher multicollinearity; the RMSE comparison across all four models is shown in Figure N.</p>
+<p>All three linear models show substantial residual RMSE (&gt;60 K), indicating that the relationship between descriptors and melting point is not well captured by a linear model alone. The systematic scatter in the predicted vs. experimental plots reflects the inability of a linear combination of these descriptors to account for crystal packing effects and higher-order structure–property relationships.</p>
+<h2 id="7-lasso-regression">7. LASSO Regression</h2>
+<p>LASSO (Least Absolute Shrinkage and Selection Operator) [9] was chosen over ridge regression because it performs simultaneous variable selection by shrinking some coefficients exactly to zero. This is desirable given that several of the 24 descriptors are likely to be collinear or uninformative, and a sparser model is more interpretable.</p>
+<p>The OCHEM and Enamine training data were split 90/10 into a training subset and a validation set using a random split with <code>random_state=42</code>. A random split was used rather than a dataset-level split because both OCHEM and Enamine cover similar chemical space, making either a valid source of validation data. Seven values of the regularisation parameter α were evaluated over four orders of magnitude: 0.0001, 0.001, 0.01, 0.1, 1.0, 10.0, and 100.0.</p>
+<blockquote>
+<p><strong>Figure 4.</strong> Left: validation R² vs log(α). Centre: validation MAE vs log(α). Right: number of non-zero LASSO coefficients vs log(α). Performance is near-constant for α ≤ 0.01, then degrades steadily. α = 0.01 was selected as it achieves the best validation R² whilst retaining 20 of 24 descriptors.</p>
+</blockquote>
+<p>The validation performance (Figure 4) is nearly insensitive to α below 0.01, with R² remaining at approximately 0.509 and MAE near 40.9 K for the smallest three values tested. Above α = 0.1, performance degrades as the regularisation becomes strong enough to shrink informative coefficients. The value α = 0.01 was selected as the best, retaining 20 of 24 descriptors while achieving the highest validation R².</p>
+<p>The four descriptors eliminated at this alpha were RingCount, NumAroRings, NumAliCarboC, and NumSatRing. These are likely collinear with retained descriptors: for example, RingCount correlates with the more specific NumAliRing, NumAroRings, and NumSatRing counts. The largest positive coefficients in the final model were associated with TPSA (+40.7) and LabuteASA (+43.8), consistent with their role as measures of molecular surface area and hydrogen-bond exposure, both of which favour stronger intermolecular interactions and higher melting points. The largest negative coefficient was on NumHAcceptors (−20.5), which at first appears counterintuitive but is compensated by the positive TPSA term; these two descriptors are correlated and the model partitions their contributions accordingly.</p>
+<p>On the combined test set, the LASSO model achieves R² = 0.567, MAE = 50.2 K, and RMSE = 63.3 K, nearly identical to Model 3 from the linear regression section. This confirms that the four removed descriptors contribute negligible additional information: the model is no worse after regularisation, and it is more parsimonious. Evaluated separately, the Bradley test set gives R² = 0.539 and RMSE = 64.8 K, while the smaller Bergstrom dataset achieves R² = 0.311 and RMSE = 45.5 K. The lower Bergstrom R² despite a lower RMSE reflects the narrower melting point range in that dataset (a small absolute spread reduces R² even for reasonable absolute errors).</p>
+<h2 id="8-neural-networks-descriptor-based">8. Neural Networks: Descriptor-Based</h2>
+<p>A feed-forward neural network was trained using all 24 standardised molecular descriptors as input, following the same 90/10 training-validation split and random state as the LASSO regression. The same 3,163-molecule combined test set was used for final evaluation. Seven activation functions were tested in separate models with identical architecture and training protocol, allowing a fair comparison of their effect on performance.</p>
+<h3 id="81-architecture-and-training">8.1. Architecture and Training</h3>
+<p>The network architecture consists of three hidden layers with decreasing width: Dense(128) → Dropout(0.2) → Dense(64) → Dropout(0.2) → Dense(32) → Dense(1). The progressive width reduction (128→64→32) follows a standard design pattern for regression networks: the decreasing widths compress the 24-dimensional input progressively toward the single output, while each stage learns increasingly abstract representations. Dropout (20% of neurons dropped during training) reduces overfitting. The output layer uses linear activation, as required for a regression target with an unbounded range. The Adam optimiser [10] was used with a learning rate of 0.001, MSE loss, and a batch size of 64. Early stopping with patience=25 monitored the validation loss, restoring the best weights when training was halted.</p>
+<p>The seven activation functions tested were: ReLU, Tanh, ELU (Exponential Linear Unit), Swish, LeakyReLU (α=0.2), Mish, and GELU. LeakyReLU and Mish were implemented as custom TensorFlow functions [7]; the remaining five are available natively in Keras. The architecture was kept identical across all seven models so that only the activation function varies.</p>
+<h3 id="82-results">8.2. Results</h3>
+<p><strong>Table 3.</strong> Test set performance of the descriptor-based neural network for all seven activation functions, ranked by RMSE.</p>
+<table>
+<thead>
+<tr>
+<th>Activation</th>
+<th>R²</th>
+<th>MAE (K)</th>
+<th>RMSE (K)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tanh</td>
+<td>0.828</td>
+<td>30.98</td>
+<td>39.92</td>
+</tr>
+<tr>
+<td>Mish</td>
+<td>0.823</td>
+<td>31.45</td>
+<td>40.43</td>
+</tr>
+<tr>
+<td>LeakyReLU</td>
+<td>0.822</td>
+<td>31.81</td>
+<td>40.58</td>
+</tr>
+<tr>
+<td>Swish</td>
+<td>0.821</td>
+<td>32.17</td>
+<td>40.68</td>
+</tr>
+<tr>
+<td>ReLU</td>
+<td>0.820</td>
+<td>31.94</td>
+<td>40.86</td>
+</tr>
+<tr>
+<td>GELU ✓</td>
+<td>0.808</td>
+<td>33.11</td>
+<td>42.20</td>
+</tr>
+<tr>
+<td>ELU</td>
+<td>0.797</td>
+<td>33.96</td>
+<td>43.36</td>
+</tr>
+</tbody>
+</table>
+<p>The validation set selected GELU as the best activation (validation RMSE = 43.7 K, R² = 0.667), but on the test set Tanh achieves the best performance (RMSE = 39.9 K, R² = 0.828), as shown in Table 3. This discrepancy highlights the stochastic nature of neural network training and the limitations of a single validation split for model selection. Nevertheless, the five middle-ranking activations (Tanh through ReLU) are clustered within 1 K of each other on the test set, suggesting the architecture itself is more important than the specific activation function.</p>
+<p>The improvement over the best linear model is substantial: the selected (GELU) descriptor NN reduces RMSE by 33% relative to LASSO (from 63.3 K to 42.2 K), accounting for 81% of test set variance (R² = 0.808). The size of this improvement suggests the descriptor–melting point relationship is not purely linear, and the network is likely picking up interactions between descriptors that the linear fit cannot represent.</p>
+<blockquote>
+<p><strong>Figure 5.</strong> Predicted vs. experimental melting points for the validation-selected descriptor neural network (GELU). The scatter around the 1:1 line is approximately symmetric, with no strong systematic bias. Outliers correspond predominantly to very high melting point compounds, where crystal packing effects dominate and the descriptors are less informative.</p>
+</blockquote>
+<h2 id="9-neural-networks-morgan-fingerprint-based">9. Neural Networks: Morgan Fingerprint-Based</h2>
+<p>A second neural network was trained using 2048-bit Morgan fingerprints (radius=2) as input, loaded directly from the pre-computed matrix saved in the fingerprints section. The same training-validation-test split was used throughout.</p>
+<h3 id="91-architecture-and-training">9.1. Architecture and Training</h3>
+<p>Because the input layer is 2048 nodes wide rather than 24, a larger first hidden layer was used to avoid an overly abrupt compression. The architecture is Dense(256) → Dropout(0.3) → Dense(128) → Dropout(0.3) → Dense(64) → Dropout(0.2) → Dense(32) → Dense(1). Higher dropout rates (0.3 rather than 0.2) were used in the first two layers to compensate for the higher-dimensional input, which presents a greater risk of the network memorising training set bit patterns. The same Adam optimiser, learning rate of 0.001, batch size of 256, and early stopping (patience=25) were used as for the descriptor network.</p>
+<h3 id="92-results">9.2. Results</h3>
+<p><strong>Table 4.</strong> Test set performance of the fingerprint-based neural network for all seven activation functions, ranked by RMSE. ✓ marks the selected model (Tanh), which showed the deepest validation convergence (115 epochs) and also achieved the best test performance.</p>
+<table>
+<thead>
+<tr>
+<th>Activation</th>
+<th>R²</th>
+<th>MAE (K)</th>
+<th>RMSE (K)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tanh ✓</td>
+<td>0.746</td>
+<td>36.45</td>
+<td>48.46</td>
+</tr>
+<tr>
+<td>ELU</td>
+<td>0.743</td>
+<td>37.60</td>
+<td>48.74</td>
+</tr>
+<tr>
+<td>LeakyReLU</td>
+<td>0.672</td>
+<td>42.94</td>
+<td>55.11</td>
+</tr>
+<tr>
+<td>Mish</td>
+<td>0.669</td>
+<td>43.18</td>
+<td>55.33</td>
+</tr>
+<tr>
+<td>Swish</td>
+<td>0.655</td>
+<td>44.28</td>
+<td>56.48</td>
+</tr>
+<tr>
+<td>GELU</td>
+<td>0.644</td>
+<td>44.50</td>
+<td>57.38</td>
+</tr>
+<tr>
+<td>ReLU</td>
+<td>0.613</td>
+<td>46.50</td>
+<td>59.85</td>
+</tr>
+</tbody>
+</table>
+<p>The fingerprint network performs substantially differently depending on the activation function (Table 4). Tanh (RMSE = 48.5 K, R² = 0.746) and ELU (RMSE = 48.7 K, R² = 0.743) are closely matched and considerably better than the remaining five, which cluster between 55 and 60 K RMSE. The clear performance gap between the Tanh/ELU pair and the ReLU-family functions is consistent with the hypothesis that the sparse, binary fingerprint inputs favour smooth, zero-symmetric activation functions: Tanh and ELU can represent both the presence (positive) and absence (effectively zero) of a substructure, while ReLU and its variants may be less well-suited to binary inputs where the zero-state is meaningful. This is a post-hoc hypothesis supported by the observed results rather than a demonstrated mechanism.</p>
+<p>The training curves (Figure S) reveal that several activation functions (ReLU, Swish, Mish, GELU) converge in very few epochs (27–33) to relatively high validation losses, indicating early stopping was triggered early. This is consistent with the poor test performance of these functions on fingerprints. By contrast, Tanh trains for 115 epochs before early stopping, exploiting the fingerprint space more thoroughly.</p>
+<h3 id="93-comparison-with-descriptor-network-and-learning-curves">9.3. Comparison with Descriptor Network and Learning Curves</h3>
+<p>The selected fingerprint network (Tanh, RMSE = 48.5 K, R² = 0.746) underperforms the selected descriptor network (GELU, RMSE = 42.2 K, R² = 0.808) by 6.3 K RMSE. One interpretation is that descriptors encode domain knowledge, polarity, size, ring systems, hydrogen bonding, that directly maps onto the physical drivers of melting point, while fingerprints encode local substructural environments that require a more complex mapping to a global thermodynamic property.</p>
+<p>To test whether the gap arises from data scarcity rather than representation quality, both networks were retrained on seven progressively larger fractions of the training set (5%, 10%, 20%, 30%, 50%, 75%, and 100%), using Tanh activation throughout. Test RMSE on the combined test set was recorded at each fraction.</p>
+<blockquote>
+<p><strong>Figure 6.</strong> Learning curves for the descriptor (blue) and fingerprint (red) neural networks (Tanh activation, log-scale x-axis). Both curves are non-monotonic at intermediate training sizes due to training instability; the dashed lines show the general downward trend at full and near-full data sizes.</p>
+</blockquote>
+<p>The learning curve data (Table E, Figure 6) show non-monotonic behaviour at small-to-intermediate training fractions. For the descriptor network, RMSE is high and erratic below 20% of training data (106–116 K), drops sharply once ~8,000 molecules are available (42–43 K), then spikes again at 50% (115 K) before stabilising below 41 K from 75% onward. The fingerprint network shows a similar instability: RMSE spikes to 114 K at 20% despite being lower at 10% (66 K), before descending to 48–50 K from 50% onward.</p>
+<p>These spikes are consistent with the known behaviour of early stopping under unstable training: at certain fractions the randomly sampled subset does not provide sufficient gradient signal at the chosen learning rate, early stopping triggers before the model has escaped a poor local minimum, and the reported test RMSE reflects that unconverged state. From 75% of training data (~30,000 molecules) both networks converge reliably. At 100% (~40,000 molecules), the descriptor network reaches 40.6 K and the fingerprint network reaches 47.3 K, consistent with the main notebook results (GELU 42.2 K and Tanh 48.5 K; the ~2 K difference reflects the change from Tanh to the validation-selected GELU for descriptors). The descriptor network’s advantage is present at every training fraction where both models converge. That suggests the gap is not simply due to limited training data, though it may also partly reflect the specific network sizes and training setup used here.</p>
+<h2 id="10-discussion">10. Discussion</h2>
+<p>The general trend across all models is that more complex models and richer representations give better predictions. The linear models show one interesting result: retaining 95% of descriptor variance in PCA does not mean retaining 95% of the information relevant to melting point. Compressing to 12 PCs worsens RMSE from 63.4 K to 69.0 K compared to using all 24 descriptors directly. LASSO also shows that four of the descriptors can be dropped without any real loss in performance, which makes sense given how many of the ring-count descriptors overlap.</p>
+<p>The neural networks give the biggest improvement. The selected descriptor network (GELU) cuts RMSE by roughly a third relative to LASSO, which suggests the relationship between these descriptors and melting point is not simply additive. The fingerprint network still lags behind even when both models are trained on the largest data fractions, so the gap is probably not just a consequence of having less training data. The descriptor advantage more likely reflects the fact that these descriptors directly encode properties relevant to melting point, polarity, hydrogen bonding, ring geometry, whereas fingerprints encode local substructure that requires a less obvious mapping to a bulk thermodynamic property.</p>
+<p>The choice of activation function also matters more for the fingerprint network (~11 K spread) than for the descriptor network (~3.4 K). One possible reason is that Tanh and ELU are zero-centred, so they treat a zero bit differently from a positive one, which could help the network distinguish between a substructure being absent versus present. ReLU-family functions do not have this property. This is speculative, but the pattern in the results is consistent with it.</p>
+<p>All models remain well above experimental measurement uncertainty (~5–10 K). That is probably unavoidable given the inputs: no two-dimensional molecular representation captures how a compound actually packs into a crystal lattice.</p>
+<h3 id="101-what-additional-information-would-improve-future-models">10.1. What Additional Information Would Improve Future Models?</h3>
+<p>The most obvious gap in all the models is crystal-structure information. Melting point is fundamentally a solid-state property: it depends on how tightly and regularly molecules pack into a lattice, which is not captured by any two-dimensional representation. Two compounds with the same SMILES can have very different melting points if they adopt different crystal polymorphs. Including space group data or unit cell parameters from the Cambridge Structural Database would be the most direct way to address this.</p>
+<p>Periodic DFT calculations can give estimated lattice energies, which relate more directly to melting point than any molecular descriptor. The cost is much higher, but for a targeted study of a smaller compound set this would be practical.</p>
+<p>Within the existing approach, useful additions would include polymorphic form labels (polymorphs of the same compound can differ by 10–50 K), and more data at the high-melting-point end (above ~550 K) where all models currently struggle most. Better experimental metadata, measurement method, solvent used, reported purity, could also help, since the training data aggregates results from many different sources.</p>
+<h2 id="11-conclusion">11. Conclusion</h2>
+<p>The linear models establish a baseline of RMSE ~63–69 K depending on representation. LASSO and full-descriptor regression give nearly identical results, and both outperform the PCA-based model, which shows that compressing descriptors to preserve variance does not preserve the information most useful for the target. The neural networks perform considerably better: the selected descriptor network (GELU) reaches RMSE = 42.2 K (R² = 0.808) and the fingerprint network (Tanh) reaches 48.5 K (R² = 0.746). The descriptor network’s advantage over the fingerprint network holds across all training data sizes where both converge, which suggests the gap is not just a data-volume issue. The activation function matters noticeably more for the fingerprint network than for the descriptor one.</p>
+<p>All models are still well above experimental uncertainty. The most likely reason is that melting point is set by crystal packing, which none of the inputs here, SMILES, descriptors, or fingerprints, can fully represent. Incorporating crystal structure data, calculated lattice energies, or polymorphic form labels would be the most direct way to improve predictions beyond the ceiling these models appear to be approaching.</p>
+<h2 id="references">References</h2>
+<ol>
+<li>F. L. Nigsch, A. Bender, B. van Buuren, J. Tissen, E. Nigsch and J. B. O. Mitchell, <em>J. Chem. Inf. Model.</em>, 2006, <strong>46</strong>, 2412–2422.</li>
+<li>I. Sushko, S. Novotarskyi, R. Körner, A. K. Pandya, M. Rupp, W. Teetz, S. Brandmaier, A. Abdelaziz, V. V. Prokopenko and I. V. Tetko, <em>J. Comput. Aided Mol. Des.</em>, 2011, <strong>25</strong>, 533–554.</li>
+<li>J. S. Bradley, <em>Open Melting Point Dataset</em>, Figshare, 2010.</li>
+<li>C. A. S. Bergstrom, U. Norinder, K. Luthman and P. Artursson, <em>J. Chem. Inf. Comput. Sci.</em>, 2002, <strong>42</strong>, 1125–1136.</li>
+<li>RDKit: Open-Source Cheminformatics, <a href="https://www.rdkit.org">https://www.rdkit.org</a>.</li>
+<li>F. Pedregosa <em>et al.</em>, <em>J. Mach. Learn. Res.</em>, 2011, <strong>12</strong>, 2825–2830.</li>
+<li>M. Abadi <em>et al.</em>, <em>TensorFlow: Large-scale machine learning on heterogeneous systems</em>, 2015.</li>
+<li>D. Rogers and M. Hahn, <em>J. Chem. Inf. Model.</em>, 2010, <strong>50</strong>, 742–754.</li>
+<li>R. Tibshirani, <em>J. R. Statist. Soc. B</em>, 1996, <strong>58</strong>, 267–288.</li>
+<li>D. P. Kingma and J. Ba, <em>Adam: A method for stochastic optimization</em>, arXiv:1412.6980, 2014.</li>
+</ol>
+<h2 id="appendix">Appendix</h2>
+<p>Supplementary figures referenced in the main text and additional visualisations supporting the analysis.</p>
+<blockquote>
+<p><strong>Figure G.</strong> Distribution of experimental melting points across the four datasets. The combined training data (OCHEM and Enamine) spans approximately 200–700 K; the Bradley and Bergstrom test sets cover a similar range. The distribution is unimodal and slightly right-skewed, with the modal melting point near 430 K.</p>
+</blockquote>
+<blockquote>
+<p><strong>Figure H.</strong> Scatter plots of each of the 24 calculated descriptors against experimental melting point for the training set. Descriptors with the clearest trends include TPSA, MolWt, and LabuteASA, which show a broad positive correlation with melting point, while MolLogP and NumRotBond are weakly negatively correlated, consistent with the role of lipophilicity and flexibility in reducing crystal packing stability.</p>
+</blockquote>
+<blockquote>
+<p><strong>Figure I.</strong> PC1 vs PC2 scores plotted separately for each of the four datasets. Enamine occupies a more compact, lower-PC1 region typical of focused pharmaceutical scaffolds; OCHEM spans a wider area reflecting its heterogeneous literature origins. The Bradley and Bergstrom test sets cluster within the training distribution in both cases.</p>
+</blockquote>
+<blockquote>
+<p><strong>Figure J.</strong> Heatmap of PCA loadings for PC1 to PC5. PC1 is dominated by size and ring descriptors (positive); PC2 by aromaticity (positive) versus sp³ hybridisation (negative); PC3 by heteroatom content and hydrogen-bonding capacity; PC4 and PC5 capture more subtle structural features including bridgehead and spiro atoms.</p>
+</blockquote>
+<blockquote>
+<p><strong>Figure K.</strong> Hierarchical clustering dendrogram for the 200-molecule stratified sample using (1 − Tanimoto similarity) as the pairwise distance metric. At a cutoff of 0.70, 157 distinct clusters are identified, reflecting the high structural diversity of the dataset and the fine-grained discrimination of Morgan fingerprints.</p>
+</blockquote>
+<blockquote>
+<p><strong>Figure L.</strong> Hierarchical clustering dendrogram for the 200-molecule stratified sample using Euclidean distance on standardised 24-descriptor vectors. At a cutoff of 5.0, only 24 clusters are formed with the largest containing over 100 molecules, indicating that continuous descriptors aggregate structural diversity more coarsely than binary fingerprints.</p>
+</blockquote>
+<blockquote>
+<p><strong>Figure M.</strong> Scatter plot of pairwise fingerprint Tanimoto distances versus normalised pairwise descriptor Euclidean distances for all 200×199/2 molecular pairs in the clustering sample. The weak positive correlation (Pearson r = 0.317) indicates that while the two representations broadly agree on which molecules are most dissimilar, they measure different aspects of chemical space and produce markedly different cluster structures.</p>
+</blockquote>
+<blockquote>
+<p><strong>Figure N.</strong> RMSE bar chart comparing all four linear-style models on the combined test set. Performance improves progressively from the PC-based Model 1 to the full-descriptor LASSO model (Model 4), though the improvement from Model 3 to Model 4 is negligible.</p>
+</blockquote>
+<blockquote>
+<p><strong>Figure O.</strong> Predicted versus experimental melting points on the combined test set for Model 1 (linear regression on top 12 principal components, R² = 0.485, RMSE = 69.0 K). The broad scatter and systematic under-prediction of high melting points reflect the information loss from PCA compression.</p>
+</blockquote>
+<blockquote>
+<p><strong>Figure P.</strong> Predicted versus experimental melting points for Model 2 (linear regression on 12 hand-selected descriptors, R² = 0.530, RMSE = 65.9 K). The scatter is slightly tighter than Model 1 at the upper end of the melting point range.</p>
+</blockquote>
+<blockquote>
+<p><strong>Figure Q.</strong> Predicted versus experimental melting points for Model 3 (linear regression on all 24 descriptors, R² = 0.566, RMSE = 63.4 K). The improvement over Models 1 and 2 is consistent across the full melting point range.</p>
+</blockquote>
+<blockquote>
+<p><strong>Figure R.</strong> Predicted versus experimental melting points on the combined test set for the optimised LASSO model (α = 0.01, R² = 0.567, RMSE = 63.3 K). The scatter pattern is near-identical to Model 3, confirming that removing four collinear descriptors does not alter the model’s predictive behaviour.</p>
+</blockquote>
+<blockquote>
+<p><strong>Figure S.</strong> Training and validation loss curves for all seven activation functions on the fingerprint neural network. Tanh shows the slowest but deepest convergence over 115 epochs; most other activations converge (or stop via early stopping) within 30 epochs, suggesting they are more susceptible to getting stuck in local minima or stopping before fully exploiting the high-dimensional fingerprint space.</p>
+</blockquote>
+<blockquote>
+<p><strong>Figure T.</strong> Predicted versus experimental melting points on the combined test set for all seven activation functions in the descriptor-based neural network. Tanh, Mish, LeakyReLU, Swish, and ReLU produce similar tight scatter patterns around the 1:1 line; ELU shows slightly wider residuals consistent with its lower R² of 0.797.</p>
+</blockquote>
+<blockquote>
+<p><strong>Figure U.</strong> Training and validation loss curves for all seven activation functions on the descriptor-based neural network. ELU converges rapidly but to a higher loss; the remaining activations (particularly ReLU, Tanh, Swish, LeakyReLU, Mish, and GELU) show gradual convergence with the best models trained for 200–280 epochs before early stopping.</p>
+</blockquote>
+<blockquote>
+<p><strong>Figure V.</strong> Predicted vs. experimental melting points on the test set for all seven fingerprint neural network activations. The Tanh and ELU models show the tightest scatter around the 1:1 line. The ReLU model shows a systematic compression of predictions toward the centre of the distribution, reflecting underfitting.</p>
+</blockquote>
+<p><strong>Table E.</strong> Test RMSE at each training fraction for the descriptor (Desc.) and fingerprint (FP) networks. Both networks used Tanh activation. Spikes at some intermediate fractions reflect training instability rather than a genuine performance reversal.</p>
+<table>
+<thead>
+<tr>
+<th>Fraction</th>
+<th>n<sub>train</sub></th>
+<th>Desc. RMSE (K)</th>
+<th>FP RMSE (K)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5%</td>
+<td>1,992</td>
+<td>106.4</td>
+<td>71.2</td>
+</tr>
+<tr>
+<td>10%</td>
+<td>3,985</td>
+<td>116.4</td>
+<td>65.7</td>
+</tr>
+<tr>
+<td>20%</td>
+<td>7,971</td>
+<td>42.8</td>
+<td>114.2</td>
+</tr>
+<tr>
+<td>30%</td>
+<td>11,956</td>
+<td>42.0</td>
+<td>67.2</td>
+</tr>
+<tr>
+<td>50%</td>
+<td>19,928</td>
+<td>115.1</td>
+<td>50.5</td>
+</tr>
+<tr>
+<td>75%</td>
+<td>29,892</td>
+<td>40.0</td>
+<td>48.9</td>
+</tr>
+<tr>
+<td>100%</td>
+<td>39,857</td>
+<td>40.6</td>
+<td>47.3</td>
+</tr>
+</tbody>
+</table>
+</div></article></main><footer data-astro-cid-jo6i4kqk>&copy; 2026 Benedict D. Ticehurst. All rights reserved.<div class="social-links" data-astro-cid-jo6i4kqk><a href="https://m.webtoo.ls/@astro" target="_blank" data-astro-cid-jo6i4kqk><span class="sr-only" data-astro-cid-jo6i4kqk>Follow Astro on Mastodon</span><svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" astro-icon="social/mastodon" data-astro-cid-jo6i4kqk><path fill="currentColor" d="M11.19 12.195c2.016-.24 3.77-1.475 3.99-2.603.348-1.778.32-4.339.32-4.339 0-3.47-2.286-4.488-2.286-4.488C12.062.238 10.083.017 8.027 0h-.05C5.92.017 3.942.238 2.79.765c0 0-2.285 1.017-2.285 4.488l-.002.662c-.004.64-.007 1.35.011 2.091.083 3.394.626 6.74 3.78 7.57 1.454.383 2.703.463 3.709.408 1.823-.1 2.847-.647 2.847-.647l-.06-1.317s-1.303.41-2.767.36c-1.45-.05-2.98-.156-3.215-1.928a3.614 3.614 0 0 1-.033-.496s1.424.346 3.228.428c1.103.05 2.137-.064 3.188-.189zm1.613-2.47H11.13v-4.08c0-.859-.364-1.295-1.091-1.295-.804 0-1.207.517-1.207 1.541v2.233H7.168V5.89c0-1.024-.403-1.541-1.207-1.541-.727 0-1.091.436-1.091 1.296v4.079H3.197V5.522c0-.859.22-1.541.66-2.046.456-.505 1.052-.764 1.793-.764.856 0 1.504.328 1.933.983L8 4.39l.417-.695c.429-.655 1.077-.983 1.934-.983.74 0 1.336.259 1.791.764.442.505.661 1.187.661 2.046v4.203z" data-astro-cid-jo6i4kqk></path></svg></a><a href="https://twitter.com/astrodotbuild" target="_blank" data-astro-cid-jo6i4kqk><span class="sr-only" data-astro-cid-jo6i4kqk>Follow Astro on Twitter</span><svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" astro-icon="social/twitter" data-astro-cid-jo6i4kqk><path fill="currentColor" d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" data-astro-cid-jo6i4kqk></path></svg></a><a href="https://github.com/withastro/astro" target="_blank" data-astro-cid-jo6i4kqk><span class="sr-only" data-astro-cid-jo6i4kqk>Go to Astro's GitHub repo</span><svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" astro-icon="social/github" data-astro-cid-jo6i4kqk><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" data-astro-cid-jo6i4kqk></path></svg></a></div></footer></body></html>
