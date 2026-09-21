@@ -28,12 +28,17 @@ body {
 	color: rgb(var(--gray-dark));
 	font-size: 20px;
 	line-height: 1.7;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
 }
 main {
+	flex: 1;
 	width: 720px;
 	max-width: calc(100% - 2em);
-	margin: auto;
+	margin: 0 auto;
 	padding: 3em 1em;
+	box-sizing: border-box;
 }
 h1,
 h2,
@@ -46,19 +51,30 @@ h6 {
 	line-height: 1.2;
 }
 h1 {
-	font-size: 3.052em;
+	font-size: 2.4em;
 }
 h2 {
-	font-size: 2.441em;
+	font-size: 1.75em;
 }
 h3 {
-	font-size: 1.953em;
+	font-size: 1.4em;
 }
 h4 {
-	font-size: 1.563em;
+	font-size: 1.2em;
 }
 h5 {
-	font-size: 1.25em;
+	font-size: 1.1em;
+}
+main h2,
+main h3 {
+	margin-top: 1.75em;
+}
+main h1 {
+	margin-bottom: 0.75em;
+}
+main h1 + h2,
+main h1 + h3 {
+	margin-top: 0;
 }
 strong,
 b {
@@ -74,7 +90,11 @@ p {
 	margin-bottom: 1em;
 }
 .prose p {
-	margin-bottom: 2em;
+	margin-bottom: 1.25em;
+}
+.prose h2,
+.prose h3 {
+	margin-top: 1.75em;
 }
 textarea {
 	width: 100%;
@@ -85,6 +105,20 @@ input {
 }
 table {
 	width: 100%;
+	margin-bottom: 1.5em;
+	border-collapse: collapse;
+	font-size: 0.85em;
+	line-height: 1.4;
+}
+th,
+td {
+	padding: 0.5em 0.75em;
+	text-align: left;
+	border-bottom: 1px solid rgb(var(--gray-light));
+}
+th {
+	border-bottom: 2px solid rgb(var(--gray));
+	color: rgb(var(--black));
 }
 img {
 	max-width: 100%;
@@ -105,9 +139,12 @@ pre > code {
 }
 blockquote {
 	border-left: 4px solid var(--accent);
-	padding: 0 0 0 20px;
-	margin: 0;
-	font-size: 1.333em;
+	padding: 0.25em 0 0.25em 1em;
+	margin: 0 0 1.5em 0;
+	font-size: 0.9em;
+}
+blockquote p:last-child {
+	margin-bottom: 0;
 }
 hr {
 	border: none;
@@ -118,7 +155,11 @@ hr {
 		font-size: 18px;
 	}
 	main {
-		padding: 1em;
+		padding: 1.5em 1em;
+	}
+	table {
+		display: block;
+		overflow-x: auto;
 	}
 }
 

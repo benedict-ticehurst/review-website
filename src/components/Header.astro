@@ -60,8 +60,18 @@ import HeaderLink from './HeaderLink.astro';
 	}
 	nav {
 		display: flex;
+		flex-wrap: wrap;
 		align-items: center;
 		justify-content: space-between;
+		gap: 0 1em;
+		max-width: 1100px;
+		margin: 0 auto;
+	}
+	h2 {
+		white-space: nowrap;
+	}
+	.internal-links {
+		display: flex;
 	}
 	nav a {
 		padding: 1em 0.5em;
@@ -78,8 +88,14 @@ import HeaderLink from './HeaderLink.astro';
 		display: flex;
 	}
 	@media (max-width: 720px) {
+		header {
+			padding: 0 0.5em;
+		}
 		.social-links {
 			display: none;
+		}
+		nav a {
+			padding: 0.75em 0.4em;
 		}
 	}
 </style>
