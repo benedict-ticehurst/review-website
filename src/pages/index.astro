@@ -3,6 +3,7 @@ import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import { withBase } from '../utils';
 ---
 
 <!doctype html>
@@ -28,8 +29,8 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 				into a single, referenced account.
 			</p>
 			<p>
-				Have a look through the <a href="/blog">Reviews</a>, or read more about why I write them on
-				the <a href="/about">About</a> page.
+				Have a look through the <a href={withBase('/blog')}>Reviews</a>, or read more about why I write them on
+				the <a href={withBase('/about')}>About</a> page.
 			</p>
 		</main>
 		<Footer />
