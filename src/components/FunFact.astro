@@ -1,0 +1,42 @@
+---
+import { funFacts } from '../data/funFacts';
+---
+
+<div class="fun-fact">
+	<p class="fun-fact-label">🔬 Chemistry fact of the day</p>
+	<p class="fun-fact-text" id="fun-fact-text"></p>
+</div>
+<script define:vars={{ funFacts }}>
+	const now = new Date();
+	const startOfYear = Date.UTC(now.getUTCFullYear(), 0, 1);
+	const today = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
+	const dayOfYear = Math.floor((today - startOfYear) / 86400000);
+	const fact = funFacts[dayOfYear % funFacts.length];
+	document.getElementById('fun-fact-text').textContent = fact;
+</script>
+<style>
+	.fun-fact {
+		max-width: 720px;
+		margin: 0 auto 1.5em;
+		padding: 1em 1.25em;
+		background: rgb(var(--surface));
+		border: 1px solid rgb(var(--gray-light));
+		border-radius: 12px;
+		text-align: left;
+	}
+	.fun-fact-label {
+		margin: 0 0 0.35em;
+		font-size: 0.75em;
+		font-weight: 700;
+		letter-spacing: 0.02em;
+		text-transform: uppercase;
+		color: rgb(var(--gray));
+	}
+	.fun-fact-text {
+		margin: 0;
+		font-size: 0.95em;
+		line-height: 1.5;
+		color: rgb(var(--gray-dark));
+		min-height: 1.5em;
+	}
+</style>

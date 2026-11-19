@@ -1,9 +1,11 @@
 ---
+import FunFact from './FunFact.astro';
 const today = new Date();
 ---
 
 <footer>
-	&copy; {today.getFullYear()} Benedict D. Ticehurst. All rights reserved.
+	<FunFact />
+	<p class="copyright">&copy; {today.getFullYear()} Benedict D. Ticehurst. All rights reserved.</p>
 </footer>
 <style>
 	footer {
@@ -13,5 +15,8 @@ const today = new Date();
 		color: rgb(var(--gray));
 		font-size: 0.85em;
 		text-align: center;
+	}
+	.copyright {
+		margin: 0;
 	}
 </style>
