@@ -12,9 +12,35 @@
 	--gray-light: 229, 233, 240;
 	--gray-dark: 34, 41, 57;
 	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
+	--surface: 255, 255, 255;
 	--box-shadow:
 		0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
 		0 16px 32px rgba(var(--gray), 33%);
+	color-scheme: light;
+}
+:root[data-theme='dark'] {
+	--accent: #6d8bff;
+	--accent-dark: #aebeff;
+	--black: 237, 239, 243;
+	--gray: 150, 163, 196;
+	--gray-light: 46, 52, 68;
+	--gray-dark: 205, 210, 222;
+	--gray-gradient: rgba(var(--gray-light), 50%), #14161c;
+	--surface: 30, 33, 42;
+	color-scheme: dark;
+}
+@media (prefers-color-scheme: dark) {
+	:root:not([data-theme='light']):not([data-theme='dark']) {
+		--accent: #6d8bff;
+		--accent-dark: #aebeff;
+		--black: 237, 239, 243;
+		--gray: 150, 163, 196;
+		--gray-light: 46, 52, 68;
+		--gray-dark: 205, 210, 222;
+		--gray-gradient: rgba(var(--gray-light), 50%), #14161c;
+		--surface: 30, 33, 42;
+		color-scheme: dark;
+	}
 }
 body {
 	font-family: var(--font-atkinson);

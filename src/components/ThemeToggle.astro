@@ -1,0 +1,53 @@
+---
+---
+
+<button id="theme-toggle" type="button" aria-label="Toggle dark mode">
+	<svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+		><circle cx="12" cy="12" r="4" /><path
+			d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+		/></svg
+	>
+	<svg class="icon icon-moon" viewBox="0 0 24 24" fill="currentColor"
+		><path d="M20.742 13.045a8.088 8.088 0 0 1-2.077.273c-4.49 0-8.13-3.64-8.13-8.13 0-1.283.3-2.65.837-3.68a.5.5 0 0 0-.598-.711A9.953 9.953 0 0 0 2 10.5C2 16.299 6.701 21 12.5 21a9.953 9.953 0 0 0 9.703-7.774.5.5 0 0 0-1.461-.181z"
+		/></svg
+	>
+</button>
+<style>
+	#theme-toggle {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 2.25em;
+		height: 2.25em;
+		padding: 0;
+		border: none;
+		background: transparent;
+		color: rgb(var(--black));
+		cursor: pointer;
+		border-radius: 50%;
+	}
+	#theme-toggle:hover {
+		background: rgba(var(--gray), 15%);
+	}
+	.icon {
+		width: 1.25em;
+		height: 1.25em;
+	}
+	.icon-moon {
+		display: none;
+	}
+	:global([data-theme='dark']) .icon-sun {
+		display: none;
+	}
+	:global([data-theme='dark']) .icon-moon {
+		display: block;
+	}
+</style>
+<script is:inline>
+	document.getElementById('theme-toggle')?.addEventListener('click', () => {
+		const root = document.documentElement;
+		const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+		root.dataset.theme = next;
+		localStorage.setItem('theme', next);
+	});
+</script>
