@@ -1,37 +1,167 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 import { withBase } from '../utils';
+
+const latestPosts = (await getCollection('blog'))
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+	.slice(0, 3);
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style>
+			.hero {
+				border-bottom: 1px solid rgb(var(--gray-light));
+				background: rgba(var(--gray-light), 30%);
+				padding: 4em 1em;
+				text-align: center;
+			}
+			.hero-inner {
+				max-width: 720px;
+				margin: 0 auto;
+			}
+			.hero h1 {
+				font-size: 3em;
+				margin-bottom: 0.4em;
+			}
+			.tagline {
+				font-size: 1.15em;
+				color: rgb(var(--gray));
+				margin-bottom: 1.5em;
+			}
+			.cta {
+				display: flex;
+				justify-content: center;
+				gap: 1em;
+				flex-wrap: wrap;
+			}
+			.button {
+				display: inline-block;
+				padding: 0.75em 1.5em;
+				border-radius: 8px;
+				font-weight: 700;
+				text-decoration: none;
+				transition: 0.2s ease;
+			}
+			.button-primary {
+				background: rgb(var(--black));
+				color: rgb(var(--surface));
+			}
+			.button-primary:hover {
+				opacity: 0.85;
+			}
+			.button-secondary {
+				background: transparent;
+				color: rgb(var(--black));
+				border: 1px solid rgb(var(--gray-light));
+			}
+			.button-secondary:hover {
+				border-color: var(--accent);
+				color: var(--accent);
+			}
+			.latest h2 {
+				margin-top: 0;
+				margin-bottom: 1em;
+			}
+			.review-list {
+				display: flex;
+				flex-direction: column;
+				gap: 1.25rem;
+				list-style-type: none;
+				margin: 0 0 2em;
+				padding: 0;
+			}
+			.review-list a {
+				display: block;
+				padding: 1.25rem 1.5rem;
+				background: rgb(var(--surface));
+				border: 1px solid rgb(var(--gray-light));
+				border-radius: 12px;
+				color: inherit;
+				text-decoration: none;
+				transition: 0.2s ease;
+			}
+			.review-list a:hover {
+				border-color: var(--accent);
+				box-shadow: var(--box-shadow);
+			}
+			.review-title {
+				margin: 0 0 0.5rem;
+				color: rgb(var(--black));
+				font-size: 1.2em;
+				line-height: 1.3;
+			}
+			.review-list a:hover .review-title {
+				color: var(--accent);
+			}
+			.review-description {
+				margin: 0;
+				font-size: 0.85em;
+				line-height: 1.5;
+			}
+			.view-all {
+				text-align: center;
+			}
+			@media (max-width: 720px) {
+				.hero {
+					padding: 3em 1em;
+				}
+				.hero h1 {
+					font-size: 2.2em;
+				}
+			}
+		</style>
 	</head>
 	<body>
 		<Header />
+		<section class="hero">
+			<div class="hero-inner">
+				<h1>{SITE_TITLE}</h1>
+				<p class="tagline">{SITE_DESCRIPTION}</p>
+				<div class="cta">
+					<a class="button button-primary" href={withBase('/blog')}>Browse Reviews</a>
+					<a class="button button-secondary" href={withBase('/about')}>Why I write these</a>
+				</div>
+			</div>
+		</section>
 		<main>
-			<h1>{SITE_TITLE}</h1>
-			<p>
-				Welcome. This site collects my reviews of the chemical literature: critical, referenced
-				write-ups that synthesize what the primary literature says about a given topic, rather than
-				single-experiment reports.
-			</p>
-			<h2>What is a chemical review, here?</h2>
-			<p>
-				A review in this sense is not a rating or a recommendation — it's a survey of published
-				research on a specific area of chemistry, aimed at answering questions like: what is
-				currently understood, where do different studies agree or disagree, and what remains open.
-				Each one is built by reading across the primary literature and pulling the findings together
-				into a single, referenced account.
-			</p>
-			<p>
-				Have a look through the <a href={withBase('/blog')}>Reviews</a>, or read more about why I write
-				them on the <a href={withBase('/about')}>About</a> page.
-			</p>
+			<section class="latest">
+				<h2>Latest reviews</h2>
+				<ul class="review-list">
+					{
+						latestPosts.map((post) => (
+							<li>
+								<a href={withBase(`/blog/${post.id}/`)}>
+									<h3 class="review-title">{post.data.title}</h3>
+									<p class="review-description">{post.data.description}</p>
+								</a>
+							</li>
+						))
+					}
+				</ul>
+				<p class="view-all">
+					<a href={withBase('/blog')}>See all reviews →</a>
+				</p>
+			</section>
+			<section>
+				<h2>What is a chemical review, here?</h2>
+				<p>
+					A review in this sense is not a rating or a recommendation — it's a survey of published
+					research on a specific area of chemistry, aimed at answering questions like: what is
+					currently understood, where do different studies agree or disagree, and what remains open.
+					Each one is built by reading across the primary literature and pulling the findings together
+					into a single, referenced account.
+				</p>
+				<p>
+					Read more about why I write them on the <a href={withBase('/about')}>About</a> page.
+				</p>
+			</section>
 		</main>
 		<Footer />
 	</body>
