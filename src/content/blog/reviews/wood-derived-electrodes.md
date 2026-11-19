@@ -189,72 +189,141 @@ The author gratefully acknowledges the University of Southampton for providing a
 
 ## References
 
-1. Z. Zhu, T. Jiang, M. Ali, Y. Meng, Y. Jin, Y. Cui and W. Chen, *Chem. Rev.*, 2022, **122**, 16610–16751.
-2. *Enabling technologies: innovation landscape*, International Renewable Energy Agency, Abu Dhabi, 2019.
-3. B.-N. Park, *Crystals*, 2024, **14**, 882.
-4. L. Lu, Y. Lu, Z. Xiao, T. Zhang, F. Zhou, T. Ma, Y. Ni, H. Yao, S. Yu and Y. Cui, *Adv. Mater.*, 2018, **30**, 1706745.
-5. W. Bauer and D. Nötzel, *Ceram. Int.*, 2014, **40**, 4591–4598.
-6. C. Reynolds, M. Faraji Niri, M. F. Hidalgo, R. Heymer, L. Román, G. Alsofi, H. Khanom, B. Pye, J. Marco and E. Kendrick, *Batter. Supercaps*, 2024, **7**, e202300396.
-7. M. D. Bouguern, A. K. Madikere Raghunatha Reddy, X. Li, S. Deng, H. Laryea and K. Zaghib, *Batteries*, 2024, **10**, 39.
-8. D. Liu, L.-C. Chen, T.-J. Liu, T. Fan, E.-Y. Tsou and C. Tiu, *Adv. Chem. Eng. Sci.*, 2014, **04**, 515–528.
-9. M. Wan, R. Gilles, J. Vacik, H. Liu, N. Wu, S. Passerini and D. Bresser, *Small*, 2024, **20**, 2404437.
-10. Y. Kim, S. Nam, Y. Jeon, J. Jung, D.-Y. Han and S. Park, *Energy Mater.*
-11. X. He, W. Li, Y. Xia, H. Huang, X. Xia, Y. Gan, J. Zhang and W. Zhang, *Carbon*, 2023, **210**, 118090.
-12. M. B. Mazalan, M. A. B. Ramlan, J. H. Shin and T. Ohashi, *Micromachines*, 2020, **11**, 659.
-13. Y. Yue and H. Liang, *Small Methods*, 2018, **2**, 1800056.
-14. J. Xu, J. Lei, N. Ming, C. Zhang and K. Huo, *Adv. Funct. Mater.*, 2022, **32**, 2204426.
-15. Q. Long, A. Celna, K. Das and P. Sørensen, *Energies*, 2021, **14**, 3495.
-16. A. M and A. Paul, *ACS Omega*, 2017, **2**, 8039–8050.
-17. N. A. Salleh, S. Kheawhom, N. Ashrina A Hamid, W. Rahiman and A. A. Mohamad, *J. Mater. Res. Technol.*, 2023, **23**, 3470–3491.
-18. C. Wang, C. Wang, M. Li, S. Zhang, C. Zhang, S. Chou, J. Mao and Z. Guo, *Mater. Today*, 2024, **72**, 235–254.
-19. K. Mazloomian, T. R. Dore, M. Buckwell, L. Bird, P. R. Shearing and T. S. Miller, *Energy Storage Mater.*, 2025, **76**, 104115.
-20. Y. Liu, S. Li, Y. Wang and J. Yang, *J. Mater. Sci. Mater. Electron.*, 2019, **30**, 5744–5752.
-21. F. Shen, W. Luo, J. Dai, Y. Yao, M. Zhu, E. Hitz, Y. Tang, Y. Chen, V. L. Sprenkle, X. Li and L. Hu, *Adv. Energy Mater.*, 2016, **6**, 1600377.
-22. Y.-C. Lin, W. Li, H. Chen, Q. Li, Y.-H. Sun, R. Shi, C.-Y. Lin, J. P. Wang, H.-C. Chen, L. Chuang, G.-Z. Qu, R. R. Sederoff and V. L. Chiang, *Nat. Protoc.*, 2014, **9**, 2194–2205.
-23. G. Inaki and L. Erlantz, *Adv Sustain. Syst*, 2021, **5**, 2100236–2100262.
-24. Á. Cañadas-López, D. Rade-Loor, M. Siegmund-Schultze, G. Moreira-Muñoz, J. J. Vargas-Hernández and C. Wehenkel, *Forests*, 2019, **10**, 733.
-25. F. B. Martins, C. P. B. Soares and G. Fernandes da Silva, *Sci. Agric.*, 2014, **71**, 212–225.
-26. S. C. Chafe, *Wood Sci. Technol.*, 1987, **21**, 27–41.
-27. M. Plötze and P. Niemz, *Eur. J. Wood Wood Prod.*, 2011, **69**, 649–657.
-28. J. Zhao, L. Yang and Y. Cai, *Wood Sci. Technol.*, 2021, **55**, 109–124.
-29. K. Von Gadow, J. Nagel and J. Saborowski, Eds., *Continuous Cover Forestry*, Springer Netherlands, Dordrecht, 2002, vol. 4.
-30. R. Jacques, J. Stovall, C. Comer, H. Williams and M. Symmank, *For. Int. J. For. Res.*, 2022, **95**, 215–228.
-31. J. Stoddart, J. Suarez, W. Mason and R. Valbuena, *Curr. For. Rep.*, 2023, **9**, 490–501.
-32. D. Wang, L. Lin, F. Fu and M. Fan, *J. Wood Sci.*, 2019, **65**, 58.
-33. M. Martín-Gamboa, P. Marques, F. Freire, L. Arroja and A. C. Dias, *Renew. Sustain. Energy Rev.*, 2020, **133**, 110278.
-34. S. Chen, L. Nie, H. Shi, X. Hu, Z. Wang, X. Zhang, Y. Zhang, Q. Hu, T. Gao, Y. Yu and W. Liu, *Trans. Tianjin Univ.*, 2023, **29**, 387–394.
-35. P. Zhu, E. H. Driscoll, B. Dong, R. Sommerville, A. Zorin, P. R. Slater and E. Kendrick, *Green Chem.*, 2023, **25**, 3503–3514.
-36. F. Wang, J. Y. Cheong, J. Lee, J. Ahn, G. Duan, H. Chen, Q. Zhang, I. Kim and S. Jiang, *Adv. Funct. Mater.*, 2021, **31**, 2101077.
-37. J. Luo, X. Yao, L. Yang, Y. Han, L. Chen, X. Geng, V. Vattipalli, Q. Dong, W. Fan, D. Wang and H. Zhu, *Nano Res.*, 2017, **10**, 4318–4326.
-38. F. Wang, J. Y. Cheong, J. Lee, J. Ahn, G. Duan, H. Chen, Q. Zhang, I. Kim and S. Jiang, *Adv. Funct. Mater.*, 2021, **31**, 2101077.
-39. C. Wan and J. Li, *RSC Adv.*, 2016, **6**, 86006–86011.
-40. C.-H. Chen, J.-M. Chiu, I. Shown and C.-H. Wang, *RSC Adv.*, 2022, **12**, 9249–9255.
-41. Q. Zhang, F. Yang, C. Zhang, H. Dong, J. Sui, L. Yu, Y. Chen, J. Yu and L. Dong, *Appl. Surf. Sci.*, 2021, **551**, 149417.
-42. J. Ouyang, M. Zhang, W. Xiong, L. Zhou, L. Zhao, Z. Li, C. Zhou, H. Chen, Y. Luo, S. Fang and R. H. Baughman, *J. Colloid Interface Sci.*, 2024, **671**, 145–153.
-43. A. Demirbas and G. Arin, *Energy Sources*, 2002, **24**, 471–482.
-44. H. Zeng, J. Zhang, L. Lin, J. Liu and J. Shi, *Ind. Crops Prod.*, 2025, **225**, 120546.
-45. D. Zhang, L. Sun, Q. Liu, H. Sun, Q. Wang, W. Li, Z. Li and B. Wang, *Biomass Bioenergy*, 2021, **153**, 106227.
-46. S. V. P. Vattikuti, P. Rosaiah, J. Shim, H. P. K. Sudhani, N. N. Thi, T.-B.-N. Dao and N. Nguyen Dang, *J. Energy Storage*, 2024, **103**, 114237.
-47. U. Landau, N. L. Weinberg and E. Gileadi, *J. Electrochem. Soc.*, 1988, **135**, 396–403.
-48. S. Wei, C. Wan and Y. Wu, *Green Chem.*, 2023, **25**, 3322–3353.
-49. T. A. Faunce, J. Prest, D. Su, S. J. Hearne and F. Iacopi, *MRS Energy Sustain.*, 2018, **5**, 10.
-50. O. Lev, Z. Wu, S. Bharathi, V. Glezer, A. Modestov, J. Gun, L. Rabinovich and S. Sampath, *Chem. Mater.*, 1997, **9**, 2354–2375.
-51. Z. Benzarti, J. D. Castro, E. Carneiro, L. Pacheco, N. Duarte, S. Carvalho, R. Serra, A. Cavaleiro, C. Alves and S. Cruz, *Materials*, 2025, **18**, 1217.
-52. C. Luo, H. Zhu, W. Luo, F. Shen, X. Fan, J. Dai, Y. Liang, C. Wang and L. Hu, *ACS Appl. Mater. Interfaces*, 2017, **9**, 14801–14807.
-53. B. Levich, *Discuss. Faraday Soc.*, 1947, **1**, 37.
-54. Z. Ju, T. Zheng, S. Checko and G. Yu, *ACS Nano*, 2025, **19**, 5688–5698.
-55. H. Wang, J. Xie, M. Follette, T. C. Back and P. B. Amama, *RSC Adv.*, 2016, **6**, 83117–83125.
-56. Y. B. Sim, B. K. Park and K. J. Kim, *Front. Batter. Electrochem.*, 2023, **2**, 1272439.
-57. A. M. Boyce, D. J. Cumming, C. Huang, S. P. Zankowski, P. S. Grant, D. J. L. Brett and P. R. Shearing, *ACS Nano*, 2021, **15**, 18624–18632.
-58. M. Wei, F. Zhang, W. Wang, P. Alexandridis, C. Zhou and G. Wu, *J. Power Sources*, 2017, **354**, 134–147.
-59. D. Gastol, M. Capener, C. Reynolds, C. Constable and E. Kendrick, *Mater. Des.*, 2021, **205**, 109720.
-60. Y. Chang, Q. Cao and B. J. Venton, *Curr. Opin. Electrochem.*, 2023, **38**, 101228.
-61. N. D. Polychronopoulos and A. Brouzgou, *Catalysts*, 2024, **14**, 110.
-62. L. Zeng, S. Ling, D. Du, H. He, X. Li and C. Zhang, *Adv. Sci.*, 2023, **10**, 2303716.
-63. V. Aravindan, J. Gnanaraj, Y.-S. Lee and S. Madhavi, *Chem. Rev.*, 2014, **114**, 11619–11635.
-64. L. Lu, Y. Lu, Z. Xiao, T. Zhang, F. Zhou, T. Ma, Y. Ni, H. Yao, S. Yu and Y. Cui, *Adv. Mater.*, 2018, **30**, 1706745.
-65. T. Bowen, I. Chernyakhovskiy and P. Denholm, *Grid-Scale Battery Storage: Frequently Asked Questions*, 2019.
-66. J. Liu, J. Xiao, J. Yang, W. Wang, Y. Shao, P. Liu and M. S. Whittingham, *Energy*, 2023, **1**, 100015.
-67. W. Wei, P. Larrey-Lassalle, T. Faure, N. Dumoulin, P. Roux and J.-D. Mathias, *Environ. Sci. Technol.*, 2015, **49**, 377–385.
-68. M. Douziech, S. Hellweg and F. Verones, *Environ. Sci. Technol.*, 2016, **50**, 7870–7878.
-69. F. Wang, J. Lee, L. Chen, G. Zhang, S. He, J. Han, J. Ahn, J. Y. Cheong, S. Jiang and I.-D. Kim, *ACS Nano*, 2023, **17**, 8866–8898.
+[1] Z. Zhu, T. Jiang, M. Ali, Y. Meng, Y. Jin, Y. Cui and W. Chen, *Chem. Rev.*, 2022, **122**, 16610–16751.
+
+[2] *Enabling technologies: innovation landscape*, International Renewable Energy Agency, Abu Dhabi, 2019.
+
+[3] B.-N. Park, *Crystals*, 2024, **14**, 882.
+
+[4] L. Lu, Y. Lu, Z. Xiao, T. Zhang, F. Zhou, T. Ma, Y. Ni, H. Yao, S. Yu and Y. Cui, *Adv. Mater.*, 2018, **30**, 1706745.
+
+[5] W. Bauer and D. Nötzel, *Ceram. Int.*, 2014, **40**, 4591–4598.
+
+[6] C. Reynolds, M. Faraji Niri, M. F. Hidalgo, R. Heymer, L. Román, G. Alsofi, H. Khanom, B. Pye, J. Marco and E. Kendrick, *Batter. Supercaps*, 2024, **7**, e202300396.
+
+[7] M. D. Bouguern, A. K. Madikere Raghunatha Reddy, X. Li, S. Deng, H. Laryea and K. Zaghib, *Batteries*, 2024, **10**, 39.
+
+[8] D. Liu, L.-C. Chen, T.-J. Liu, T. Fan, E.-Y. Tsou and C. Tiu, *Adv. Chem. Eng. Sci.*, 2014, **04**, 515–528.
+
+[9] M. Wan, R. Gilles, J. Vacik, H. Liu, N. Wu, S. Passerini and D. Bresser, *Small*, 2024, **20**, 2404437.
+
+[10] Y. Kim, S. Nam, Y. Jeon, J. Jung, D.-Y. Han and S. Park, *Energy Mater.*
+
+[11] X. He, W. Li, Y. Xia, H. Huang, X. Xia, Y. Gan, J. Zhang and W. Zhang, *Carbon*, 2023, **210**, 118090.
+
+[12] M. B. Mazalan, M. A. B. Ramlan, J. H. Shin and T. Ohashi, *Micromachines*, 2020, **11**, 659.
+
+[13] Y. Yue and H. Liang, *Small Methods*, 2018, **2**, 1800056.
+
+[14] J. Xu, J. Lei, N. Ming, C. Zhang and K. Huo, *Adv. Funct. Mater.*, 2022, **32**, 2204426.
+
+[15] Q. Long, A. Celna, K. Das and P. Sørensen, *Energies*, 2021, **14**, 3495.
+
+[16] A. M and A. Paul, *ACS Omega*, 2017, **2**, 8039–8050.
+
+[17] N. A. Salleh, S. Kheawhom, N. Ashrina A Hamid, W. Rahiman and A. A. Mohamad, *J. Mater. Res. Technol.*, 2023, **23**, 3470–3491.
+
+[18] C. Wang, C. Wang, M. Li, S. Zhang, C. Zhang, S. Chou, J. Mao and Z. Guo, *Mater. Today*, 2024, **72**, 235–254.
+
+[19] K. Mazloomian, T. R. Dore, M. Buckwell, L. Bird, P. R. Shearing and T. S. Miller, *Energy Storage Mater.*, 2025, **76**, 104115.
+
+[20] Y. Liu, S. Li, Y. Wang and J. Yang, *J. Mater. Sci. Mater. Electron.*, 2019, **30**, 5744–5752.
+
+[21] F. Shen, W. Luo, J. Dai, Y. Yao, M. Zhu, E. Hitz, Y. Tang, Y. Chen, V. L. Sprenkle, X. Li and L. Hu, *Adv. Energy Mater.*, 2016, **6**, 1600377.
+
+[22] Y.-C. Lin, W. Li, H. Chen, Q. Li, Y.-H. Sun, R. Shi, C.-Y. Lin, J. P. Wang, H.-C. Chen, L. Chuang, G.-Z. Qu, R. R. Sederoff and V. L. Chiang, *Nat. Protoc.*, 2014, **9**, 2194–2205.
+
+[23] G. Inaki and L. Erlantz, *Adv Sustain. Syst*, 2021, **5**, 2100236–2100262.
+
+[24] Á. Cañadas-López, D. Rade-Loor, M. Siegmund-Schultze, G. Moreira-Muñoz, J. J. Vargas-Hernández and C. Wehenkel, *Forests*, 2019, **10**, 733.
+
+[25] F. B. Martins, C. P. B. Soares and G. Fernandes da Silva, *Sci. Agric.*, 2014, **71**, 212–225.
+
+[26] S. C. Chafe, *Wood Sci. Technol.*, 1987, **21**, 27–41.
+
+[27] M. Plötze and P. Niemz, *Eur. J. Wood Wood Prod.*, 2011, **69**, 649–657.
+
+[28] J. Zhao, L. Yang and Y. Cai, *Wood Sci. Technol.*, 2021, **55**, 109–124.
+
+[29] K. Von Gadow, J. Nagel and J. Saborowski, Eds., *Continuous Cover Forestry*, Springer Netherlands, Dordrecht, 2002, vol. 4.
+
+[30] R. Jacques, J. Stovall, C. Comer, H. Williams and M. Symmank, *For. Int. J. For. Res.*, 2022, **95**, 215–228.
+
+[31] J. Stoddart, J. Suarez, W. Mason and R. Valbuena, *Curr. For. Rep.*, 2023, **9**, 490–501.
+
+[32] D. Wang, L. Lin, F. Fu and M. Fan, *J. Wood Sci.*, 2019, **65**, 58.
+
+[33] M. Martín-Gamboa, P. Marques, F. Freire, L. Arroja and A. C. Dias, *Renew. Sustain. Energy Rev.*, 2020, **133**, 110278.
+
+[34] S. Chen, L. Nie, H. Shi, X. Hu, Z. Wang, X. Zhang, Y. Zhang, Q. Hu, T. Gao, Y. Yu and W. Liu, *Trans. Tianjin Univ.*, 2023, **29**, 387–394.
+
+[35] P. Zhu, E. H. Driscoll, B. Dong, R. Sommerville, A. Zorin, P. R. Slater and E. Kendrick, *Green Chem.*, 2023, **25**, 3503–3514.
+
+[36] F. Wang, J. Y. Cheong, J. Lee, J. Ahn, G. Duan, H. Chen, Q. Zhang, I. Kim and S. Jiang, *Adv. Funct. Mater.*, 2021, **31**, 2101077.
+
+[37] J. Luo, X. Yao, L. Yang, Y. Han, L. Chen, X. Geng, V. Vattipalli, Q. Dong, W. Fan, D. Wang and H. Zhu, *Nano Res.*, 2017, **10**, 4318–4326.
+
+[38] F. Wang, J. Y. Cheong, J. Lee, J. Ahn, G. Duan, H. Chen, Q. Zhang, I. Kim and S. Jiang, *Adv. Funct. Mater.*, 2021, **31**, 2101077.
+
+[39] C. Wan and J. Li, *RSC Adv.*, 2016, **6**, 86006–86011.
+
+[40] C.-H. Chen, J.-M. Chiu, I. Shown and C.-H. Wang, *RSC Adv.*, 2022, **12**, 9249–9255.
+
+[41] Q. Zhang, F. Yang, C. Zhang, H. Dong, J. Sui, L. Yu, Y. Chen, J. Yu and L. Dong, *Appl. Surf. Sci.*, 2021, **551**, 149417.
+
+[42] J. Ouyang, M. Zhang, W. Xiong, L. Zhou, L. Zhao, Z. Li, C. Zhou, H. Chen, Y. Luo, S. Fang and R. H. Baughman, *J. Colloid Interface Sci.*, 2024, **671**, 145–153.
+
+[43] A. Demirbas and G. Arin, *Energy Sources*, 2002, **24**, 471–482.
+
+[44] H. Zeng, J. Zhang, L. Lin, J. Liu and J. Shi, *Ind. Crops Prod.*, 2025, **225**, 120546.
+
+[45] D. Zhang, L. Sun, Q. Liu, H. Sun, Q. Wang, W. Li, Z. Li and B. Wang, *Biomass Bioenergy*, 2021, **153**, 106227.
+
+[46] S. V. P. Vattikuti, P. Rosaiah, J. Shim, H. P. K. Sudhani, N. N. Thi, T.-B.-N. Dao and N. Nguyen Dang, *J. Energy Storage*, 2024, **103**, 114237.
+
+[47] U. Landau, N. L. Weinberg and E. Gileadi, *J. Electrochem. Soc.*, 1988, **135**, 396–403.
+
+[48] S. Wei, C. Wan and Y. Wu, *Green Chem.*, 2023, **25**, 3322–3353.
+
+[49] T. A. Faunce, J. Prest, D. Su, S. J. Hearne and F. Iacopi, *MRS Energy Sustain.*, 2018, **5**, 10.
+
+[50] O. Lev, Z. Wu, S. Bharathi, V. Glezer, A. Modestov, J. Gun, L. Rabinovich and S. Sampath, *Chem. Mater.*, 1997, **9**, 2354–2375.
+
+[51] Z. Benzarti, J. D. Castro, E. Carneiro, L. Pacheco, N. Duarte, S. Carvalho, R. Serra, A. Cavaleiro, C. Alves and S. Cruz, *Materials*, 2025, **18**, 1217.
+
+[52] C. Luo, H. Zhu, W. Luo, F. Shen, X. Fan, J. Dai, Y. Liang, C. Wang and L. Hu, *ACS Appl. Mater. Interfaces*, 2017, **9**, 14801–14807.
+
+[53] B. Levich, *Discuss. Faraday Soc.*, 1947, **1**, 37.
+
+[54] Z. Ju, T. Zheng, S. Checko and G. Yu, *ACS Nano*, 2025, **19**, 5688–5698.
+
+[55] H. Wang, J. Xie, M. Follette, T. C. Back and P. B. Amama, *RSC Adv.*, 2016, **6**, 83117–83125.
+
+[56] Y. B. Sim, B. K. Park and K. J. Kim, *Front. Batter. Electrochem.*, 2023, **2**, 1272439.
+
+[57] A. M. Boyce, D. J. Cumming, C. Huang, S. P. Zankowski, P. S. Grant, D. J. L. Brett and P. R. Shearing, *ACS Nano*, 2021, **15**, 18624–18632.
+
+[58] M. Wei, F. Zhang, W. Wang, P. Alexandridis, C. Zhou and G. Wu, *J. Power Sources*, 2017, **354**, 134–147.
+
+[59] D. Gastol, M. Capener, C. Reynolds, C. Constable and E. Kendrick, *Mater. Des.*, 2021, **205**, 109720.
+
+[60] Y. Chang, Q. Cao and B. J. Venton, *Curr. Opin. Electrochem.*, 2023, **38**, 101228.
+
+[61] N. D. Polychronopoulos and A. Brouzgou, *Catalysts*, 2024, **14**, 110.
+
+[62] L. Zeng, S. Ling, D. Du, H. He, X. Li and C. Zhang, *Adv. Sci.*, 2023, **10**, 2303716.
+
+[63] V. Aravindan, J. Gnanaraj, Y.-S. Lee and S. Madhavi, *Chem. Rev.*, 2014, **114**, 11619–11635.
+
+[64] L. Lu, Y. Lu, Z. Xiao, T. Zhang, F. Zhou, T. Ma, Y. Ni, H. Yao, S. Yu and Y. Cui, *Adv. Mater.*, 2018, **30**, 1706745.
+
+[65] T. Bowen, I. Chernyakhovskiy and P. Denholm, *Grid-Scale Battery Storage: Frequently Asked Questions*, 2019.
+
+[66] J. Liu, J. Xiao, J. Yang, W. Wang, Y. Shao, P. Liu and M. S. Whittingham, *Energy*, 2023, **1**, 100015.
+
+[67] W. Wei, P. Larrey-Lassalle, T. Faure, N. Dumoulin, P. Roux and J.-D. Mathias, *Environ. Sci. Technol.*, 2015, **49**, 377–385.
+
+[68] M. Douziech, S. Hellweg and F. Verones, *Environ. Sci. Technol.*, 2016, **50**, 7870–7878.
+
+[69] F. Wang, J. Lee, L. Chen, G. Zhang, S. He, J. Han, J. Ahn, J. Y. Cheong, S. Jiang and I.-D. Kim, *ACS Nano*, 2023, **17**, 8866–8898.
+

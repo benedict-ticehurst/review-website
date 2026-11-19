@@ -218,16 +218,25 @@ All models are still well above experimental uncertainty. The most likely reason
 
 ## References
 
-1. F. L. Nigsch, A. Bender, B. van Buuren, J. Tissen, E. Nigsch and J. B. O. Mitchell, *J. Chem. Inf. Model.*, 2006, **46**, 2412–2422.
-2. I. Sushko, S. Novotarskyi, R. Körner, A. K. Pandya, M. Rupp, W. Teetz, S. Brandmaier, A. Abdelaziz, V. V. Prokopenko and I. V. Tetko, *J. Comput. Aided Mol. Des.*, 2011, **25**, 533–554.
-3. J. S. Bradley, *Open Melting Point Dataset*, Figshare, 2010.
-4. C. A. S. Bergstrom, U. Norinder, K. Luthman and P. Artursson, *J. Chem. Inf. Comput. Sci.*, 2002, **42**, 1125–1136.
-5. RDKit: Open-Source Cheminformatics, https://www.rdkit.org.
-6. F. Pedregosa *et al.*, *J. Mach. Learn. Res.*, 2011, **12**, 2825–2830.
-7. M. Abadi *et al.*, *TensorFlow: Large-scale machine learning on heterogeneous systems*, 2015.
-8. D. Rogers and M. Hahn, *J. Chem. Inf. Model.*, 2010, **50**, 742–754.
-9. R. Tibshirani, *J. R. Statist. Soc. B*, 1996, **58**, 267–288.
-10. D. P. Kingma and J. Ba, *Adam: A method for stochastic optimization*, arXiv:1412.6980, 2014.
+[1] F. L. Nigsch, A. Bender, B. van Buuren, J. Tissen, E. Nigsch and J. B. O. Mitchell, *J. Chem. Inf. Model.*, 2006, **46**, 2412–2422.
+
+[2] I. Sushko, S. Novotarskyi, R. Körner, A. K. Pandya, M. Rupp, W. Teetz, S. Brandmaier, A. Abdelaziz, V. V. Prokopenko and I. V. Tetko, *J. Comput. Aided Mol. Des.*, 2011, **25**, 533–554.
+
+[3] J. S. Bradley, *Open Melting Point Dataset*, Figshare, 2010.
+
+[4] C. A. S. Bergstrom, U. Norinder, K. Luthman and P. Artursson, *J. Chem. Inf. Comput. Sci.*, 2002, **42**, 1125–1136.
+
+[5] RDKit: Open-Source Cheminformatics, https://www.rdkit.org.
+
+[6] F. Pedregosa *et al.*, *J. Mach. Learn. Res.*, 2011, **12**, 2825–2830.
+
+[7] M. Abadi *et al.*, *TensorFlow: Large-scale machine learning on heterogeneous systems*, 2015.
+
+[8] D. Rogers and M. Hahn, *J. Chem. Inf. Model.*, 2010, **50**, 742–754.
+
+[9] R. Tibshirani, *J. R. Statist. Soc. B*, 1996, **58**, 267–288.
+
+[10] D. P. Kingma and J. Ba, *Adam: A method for stochastic optimization*, arXiv:1412.6980, 2014.
 
 ## Appendix
 
